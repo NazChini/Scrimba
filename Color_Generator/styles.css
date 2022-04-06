@@ -1,0 +1,224 @@
+/* ------------------------CSS Variables------------------------ */
+:root {
+  --body-padding: 0;
+}
+
+/* ------------------------General------------------------ */
+* {
+  box-sizing: border-box;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: var(--body-padding);
+  background: #1c1c1c;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input,
+select,
+button {
+  border: 0;
+  cursor: pointer;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 0.75rem;
+}
+
+/* ------------------------Top Bar------------------------ */
+.top-bar {
+  padding: 25px 15px;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+form > * {
+  min-height: 42px;
+}
+
+input[type="color"] {
+  flex-shrink: 0;
+  width: 61px;
+}
+
+/* ::-webkit-color-swatch-wrapper {
+  background: #d1d5db;
+  padding: 4px 5px;
+}
+
+::-webkit-color-swatch {
+  border: 0.5px solid #313131;
+} */
+
+.select-wrapper {
+  flex-grow: 5;
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.top-bar select,
+.top-bar button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar select:hover,
+.top-bar button:hover,
+.top-bar select:focus,
+.top-bar button:focus {
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar select {
+  border-radius: 6px;
+  appearance: none;
+  padding: 9px 13px;
+  height: 100%;
+  width: 100%;
+}
+
+.top-bar button {
+  border-radius: 4px;
+  padding: 13px 11px;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.top-bar button:active {
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------Color Strips------------------------ */
+.color-strips {
+  height: 100%;
+}
+
+.color-strips ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.color-strip {
+  flex-grow: 1;
+  min-width: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-name {
+  padding: 1em 1.5em;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* .color-name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} */
+
+.color-name.color-name:active {
+  background: #f0f0f0;
+}
+
+.color-name:focus,
+.color-strip:hover {
+  z-index: 1;
+}
+
+.color-name:focus,
+.color-strip:hover > .color-name {
+  background: #f8f8f8;
+}
+
+/* see MDN */
+.color-strip:hover {
+  /* box-shadow: 0 0 0 0.1rem; */
+  border: 1px solid black;
+}
+
+.color-strip:focus-within {
+  z-index: 1;
+  /* box-shadow: 0 0 0 0.1rem; */
+}
+
+/* .color-strip:focus-within .color-name:focus {
+  outline: none;
+} */
+
+.color-block {
+  height: 100%;
+}
+
+/* .top-bar,
+.color-strips {
+  border: 1px solid red;
+} */
+
+/* ------------------------Pop Up------------------------ */
+.pop-up {
+  font-size: 0.75rem;
+  text-align: center;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 1.5em;
+  background-color: #fff;
+  box-shadow: 0 4px 11px rgba(0 0 0 0.15);
+  pointer-events: none;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+/* ------------------------Media Queries------------------------ */
+@media (min-width: 600px) {
+  :root {
+    --body-padding: 5vmax;
+  }
+  main {
+    height: calc(100vh - (var(--body-padding) + var(--body-padding)));
+    max-height: 700px;
+  }
+}
