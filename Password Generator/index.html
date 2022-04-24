@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <title>Password Generator</title>
+  </head>
+  <body class="flex">
+    <div class="container">
+      <header class="width">
+        <img
+          src="images/contrast.png"
+          alt="dark-light toggle"
+          id="lightmode-toggle"
+        />
+        <div class="header-top">
+          <h1 class="header--title">
+            Generate a <span class="accent-text">random password</span>
+          </h1>
+          <p class="header--tagline">Never use an insecure password again.</p>
+        </div>
+        <input
+          type="number"
+          id="password-length"
+          placeholder="Enter a password length"
+          min="8"
+          max="14"
+        />
+        <div class="flex" id="btn">
+          <img class="icon" src="images/Icon.png" />
+          <p class="btn--text">Generate passwords</p>
+        </div>
+      </header>
+
+      <main class="width grid">
+        <div class="password-container grid">
+          <img src="images/dots.png" class="dots" />
+        </div>
+        <div class="password-container grid">
+          <img src="images/dots.png" class="dots" />
+        </div>
+        <div class="password-container grid">
+          <img src="images/dots.png" class="dots" />
+        </div>
+        <div class="password-container grid">
+          <img src="images/dots.png" class="dots" />
+        </div>
+      </main>
+    </div>
+    <div id="pop-up" class="pop-up"></div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
